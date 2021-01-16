@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>mini vue</title>
+</head>
+<body>
+  <div id="app">
+    <h1>差值表达式</h1>
+    <div>{{msg}}</div>
+    <!-- <div>{{count}}</div> -->
+    <h1>v-text</h1>
+    <div v-text="msg"></div>
+    <h1>v-model</h1>
+    <input type="text" v-model="msg">
+    <input type="text" v-model="count">
+    <h1>v-html</h1>
+    <div v-html="html"></div>
+    <h1>v-on</h1>
+    <div v-on:click="clickHandler">点击我</div>
+  </div>
+</body>
+<script src="./js/dep.js"></script>
+<script src="./js/watcher.js"></script>
+<script src="./js/compiler.js"></script>
+<script src="./js/observer.js"></script>
+<script src="./js/vue.js"></script>
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: 'hello world',
+      count: 100,
+      person: {
+        name: 'Jack',
+      },
+      html: '<div>我是html</div>'
+    },
+    methods: {
+      clickHandler() {
+        // console.log('点我')
+        alert('点我')
+      },
+    },
+  })
+</script>
+</html>
